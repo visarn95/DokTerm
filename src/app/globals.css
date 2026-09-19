@@ -126,6 +126,36 @@ button, input { font: inherit; }
 .role-number { color: var(--blue); font-weight: 900; font-size: .85rem; }
 .role-card h3 { margin: 1.8rem 0 .65rem; font-size: 1.35rem; }
 .role-card p { color: var(--muted); line-height: 1.65; margin: 0; }
+.demo-login { margin-top: 1.4rem; padding-top: 1.25rem; border-top: 1px solid var(--line); }
+.demo-login > p { margin: 0 0 .7rem; color: var(--muted); font-size: .9rem; font-weight: 700; }
+.demo-actions { display: grid; grid-template-columns: 1fr 1fr; gap: .65rem; }
+.demo-actions button { border: 1px solid var(--line); border-radius: .7rem; padding: .75rem .6rem; color: var(--blue); background: #f5f9fc; font: inherit; font-weight: 800; cursor: pointer; }
+.demo-actions button:hover:not(:disabled) { border-color: var(--blue); background: #eaf4fb; }
+.demo-actions button:disabled { cursor: wait; opacity: .65; }
+.booking-link { display: inline-block; margin-left: .65rem; color: var(--blue); font-weight: 800; }
+.booking-card { max-width: 38rem; margin: 2rem auto; padding: 2rem; border: 1px solid var(--line); border-radius: 1.2rem; background: white; }
+.booking-card > a { display: inline-block; margin-bottom: 1.6rem; color: var(--blue); font-weight: 700; }
+.booking-card .eyebrow { display: block; }
+.booking-card h2 { margin: .5rem 0; }
+.booking-card > p { color: var(--muted); }
+.booking-form { display: grid; gap: 1rem; margin-top: 1.5rem; }
+.booking-form label { display: grid; gap: .4rem; font-weight: 700; }
+.booking-form input, .booking-form select { padding: .7rem; border: 1px solid var(--line); border-radius: .6rem; }
+.appointments-panel { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+.appointment-list { display: grid; gap: .7rem; margin: 1rem 0 0; padding: 0; list-style: none; }
+.appointment-list li { display: flex; justify-content: space-between; gap: 1rem; align-items: center; padding: .9rem; border-radius: .7rem; background: #f5f9fc; }
+.appointment-list span { display: grid; gap: .2rem; }
+.appointment-list small { color: var(--muted); }
+.appointment-list time { color: var(--blue); font-weight: 800; text-align: right; }
+.patient-appointments { max-width: 72rem; margin: 1.5rem auto 0; }
+.appointment-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1rem; }
+.patient-appointment { padding: 1.2rem; border: 1px solid var(--line); border-radius: 1rem; background: white; }
+.patient-appointment time { color: var(--blue); font-weight: 800; }
+.patient-appointment h3 { margin: .75rem 0 .25rem; }
+.patient-appointment p { margin: 0; color: var(--muted); }
+.reminder-actions { display: grid; gap: .55rem; margin-top: 1rem; }
+.reminder { padding: .65rem; border: 1px solid var(--line); border-radius: .6rem; background: #f5f9fc; color: var(--blue); font: inherit; font-weight: 700; cursor: pointer; }
+.reminder.active { border-color: #1a8a5b; background: #eaf8f1; color: #146b46; }
 .module-banner { max-width: 72rem; margin: 0 auto 6rem; padding: clamp(2rem, 5vw, 4rem); border-radius: 1.7rem; background: #eaf4ff; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
 .module-banner h2 { margin-bottom: 0; }
 .module-banner > p { color: var(--muted); line-height: 1.75; font-size: 1.05rem; }
@@ -138,6 +168,7 @@ button, input { font: inherit; }
   .hero { grid-template-columns: 1fr; padding: 4rem 1rem; }
   .hero-copy h1 { font-size: 3.5rem; }
   .role-grid, .module-banner { grid-template-columns: 1fr; }
+  .demo-actions { grid-template-columns: 1fr; }
   .explain { padding: 4rem 1rem; }
   .module-banner { margin: 0 1rem 4rem; gap: 1rem; }
   .landing-footer { margin: 0 1rem; }

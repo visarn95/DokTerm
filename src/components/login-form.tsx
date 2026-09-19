@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
 import { authClient } from "@/lib/auth-client";
+import { DemoLoginButtons } from "@/components/demo-login-buttons";
 import { loginSchema } from "@/lib/validation";
 
 export function LoginForm() {
@@ -53,6 +54,7 @@ export function LoginForm() {
           {loading ? "Duke u kyçur…" : "Kyçu"}
         </button>
       </form>
+      <DemoLoginButtons />
       <p className="switch">Nuk ke llogari? <Link href="/regjistrohu">Regjistrohu</Link></p>
     </div>
   );

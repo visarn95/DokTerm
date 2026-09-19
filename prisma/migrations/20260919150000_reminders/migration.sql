@@ -1,0 +1,2 @@
+ALTER TABLE "appointment" ADD COLUMN "reminder24h" BOOLEAN NOT NULL DEFAULT false;
+ALTER TABLE "appointment" ADD COLUMN "reminder2h" BOOLEAN NOT NULL DEFAULT false;

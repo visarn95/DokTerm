@@ -25,6 +25,7 @@ model User {
   sessions      Session[]
   accounts      Account[]
   dentistProfile DentistProfile?
+  appointments   Appointment[] @relation("PatientAppointments")
 
   @@map("user")
 }
@@ -40,6 +41,7 @@ model DentistProfile {
   updatedAt      DateTime         @updatedAt
   user           User             @relation(fields: [userId], references: [id], onDelete: Restrict)
   services       DentistService[]
+  appointments   Appointment[]
 
   @@index([specialization])
   @@map("dentistProfile")
@@ -55,6 +57,7 @@ model Service {
   createdAt       DateTime         @default(now())
   updatedAt       DateTime         @updatedAt
   dentists        DentistService[]
+  appointments    Appointment[]
 
   @@map("service")
 }
@@ -69,6 +72,25 @@ model DentistService {
   @@id([dentistId, serviceId])
   @@index([serviceId])
   @@map("dentistService")
+}
+
+model Appointment {
+  id        String   @id @default(cuid())
+  startsAt  DateTime
+  createdAt DateTime @default(now())
+  reminder24h Boolean @default(false)
+  reminder2h  Boolean @default(false)
+  patientId String
+  dentistId String
+  serviceId String
+  patient   User           @relation("PatientAppointments", fields: [patientId], references: [id], onDelete: Cascade)
+  dentist   DentistProfile @relation(fields: [dentistId], references: [id], onDelete: Restrict)
+  service   Service        @relation(fields: [serviceId], references: [id], onDelete: Restrict)
+
+  @@unique([dentistId, startsAt])
+  @@index([patientId])
+  @@index([dentistId])
+  @@map("appointment")
 }
 
 model Session {
